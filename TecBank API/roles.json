@@ -1,0 +1,16 @@
+
+  [
+    {
+      "Nombre": "conserje",
+      "Descripcion": "limpieza del banco"
+    },
+    {
+      "Nombre": "cajero",
+      "Descripcion": "cajas del banco"
+    },
+    {
+      "Nombre": "gerente",
+      "Descripcion": "maneja el banco"
+    }
+  ]
+
