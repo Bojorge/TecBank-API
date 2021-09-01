@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TecBank_API.DBMS.File_manager;
+using TecBank_API.Models;
 
 namespace TecBank_API.Controllers
 {
@@ -11,10 +13,20 @@ namespace TecBank_API.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
+        /*
         [HttpGet]
         public String Get()
         {
             return "< API RUNNING >";
+        }
+        */
+
+        [HttpGet]
+        public List<Cliente> Get()
+        {
+            ClienteManager cm = new ClienteManager();
+
+            return cm.listarClientes();
         }
 
     }

@@ -1,0 +1,30 @@
+[
+  {
+    "cedula": "123456789",
+    "nombre": "nombre",
+    "apellido_1": "apellido_1",
+    "apellido_2": "apellido_2",
+    "usuario": "usuario",
+    "password": "password",
+    "provincia": "provincia",
+    "canton": "canton",
+    "distrito": "distrito",
+    "telefono": "telefono",
+    "ingreso_mensual": "ingreso_mensual",
+    "tipo": "tipo"
+  },
+  {
+    "cedula": "906030813",
+    "nombre": "nom",
+    "apellido_1": "ap1",
+    "apellido_2": "ap2",
+    "usuario": "user",
+    "password": "pass",
+    "provincia": "prov",
+    "canton": "can",
+    "distrito": "dist",
+    "telefono": "tel",
+    "ingreso_mensual": "ingmes",
+    "tipo": "tp"
+  }
+]
