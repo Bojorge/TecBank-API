@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank API\\TecBank API.csproj": {}
+    "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank-API\\TecBank API\\TecBank API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank API\\TecBank API.csproj": {
+    "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank-API\\TecBank API\\TecBank API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank API\\TecBank API.csproj",
+        "projectUniqueName": "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank-API\\TecBank API\\TecBank API.csproj",
         "projectName": "TecBank API",
-        "projectPath": "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank API\\TecBank API.csproj",
+        "projectPath": "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank-API\\TecBank API\\TecBank API.csproj",
         "packagesPath": "C:\\Users\\Bojorge\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank API\\obj\\",
+        "outputPath": "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank-API\\TecBank API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -46,9 +46,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Swashbuckle.AspNetCore": {
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[13.0.1, )"
             }
           },
           "imports": [
