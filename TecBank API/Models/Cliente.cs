@@ -7,7 +7,7 @@ namespace TecBank_API.Models
 {
     public class Cliente
     {
-        public string cedula { get; set; }
+        public int cedula { get; set; }
         public string nombre { get; set; }
         public string apellido_1 { get; set; }
         public string apellido_2 { get; set; }

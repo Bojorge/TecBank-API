@@ -8,11 +8,11 @@ using TecBank_API.Models;
 
 namespace TecBank_API
 {
-    public class Rol
+    public class RolManager
     {
-        public List<ModeloRol> ListaDeRoles = new List<ModeloRol>();
+        public List<Rol> ListaDeRoles = new List<Rol>();
 
-        public Rol()
+        public RolManager()
         {
             listarRoles();
         }
@@ -25,7 +25,7 @@ namespace TecBank_API
             using (StreamReader file = File.OpenText(@"..\..\..\roles.json"))//se puede usar la direccion exacta hay que ver donde poner el archivo
             {
                 JsonSerializer serializer = new JsonSerializer();
-                this.ListaDeRoles = (List<ModeloRol>)serializer.Deserialize(file, typeof(List<ModeloRol>));
+                this.ListaDeRoles = (List<Rol>)serializer.Deserialize(file, typeof(List<Rol>));
             }
 
         }
@@ -38,7 +38,7 @@ namespace TecBank_API
          * **/
         public void mostrarlista()
         {
-            foreach (ModeloRol r in this.ListaDeRoles)
+            foreach (Rol r in this.ListaDeRoles)
             {
                 Console.WriteLine(r.ToString());
             }
@@ -49,7 +49,7 @@ namespace TecBank_API
          * **/
         public void agregarRol(string nombre, string descripcion)
         {
-            ModeloRol rol = new ModeloRol();
+            Rol rol = new Rol();
             rol.Nombre = nombre;
             rol.Descripcion = descripcion;
             this.ListaDeRoles.Add(rol);
@@ -94,7 +94,7 @@ namespace TecBank_API
                     break;
                 }
             }
-            ModeloRol r1 = this.ListaDeRoles[index];
+            Rol r1 = this.ListaDeRoles[index];
             switch (atributoAcambiar)
             {
                 case "Nombre":

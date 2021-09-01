@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace TecBank_API.Models
 {
-    public class ModeloRol
+    public class Rol
     {
-        public ModeloRol(){}
+        public Rol(){}
 
         public string Nombre { get; set; }
         public string Descripcion { get; set; }

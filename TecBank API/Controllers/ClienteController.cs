@@ -23,7 +23,7 @@ namespace TecBank_API.Controllers
 
         // GET api/<ClienteController>/5
         [HttpGet("{id}")]
-        public Cliente Get(string id)
+        public Cliente Get(int id)
         {
             return cm.consultarCliente(id);
         }
@@ -36,16 +36,16 @@ namespace TecBank_API.Controllers
 
         // PUT api/<ClienteController>/5
         [HttpPut("{id}")]
-        public void Put(string llave, string valor)
+        public void Put(int id, string atributoAcambiar, string ValorParaCambiar)
         {
-            cm.actualizarCliente("{id}", llave, valor);
+            cm.actualizarCliente(id, atributoAcambiar, ValorParaCambiar);
         }
 
         // DELETE api/<ClienteController>/5
-        [HttpDelete]
-        public void Delete(string cedula)
+        [HttpDelete("{id}")]
+        public void Delete(int id)
         {
-            cm.eliminarCliente(cedula);
+            cm.eliminarCliente(id);
         }
     }
 }

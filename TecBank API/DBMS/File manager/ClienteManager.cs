@@ -15,6 +15,7 @@ namespace TecBank_API.DBMS.File_manager
     {
 
         public List<Cliente> ListaDeClientes = new List<Cliente>();
+        private Cliente cliente;
 
         private void guardarCliente()
         {
@@ -35,7 +36,7 @@ namespace TecBank_API.DBMS.File_manager
             return this.ListaDeClientes;
         }
 
-        public void agregarCliente(string cedula, string nombre, string apellido_1, string apellido_2, string usuario, string password, string provincia, string canton, string distrito, string telefono, string ingreso_mensual, string tipo)
+        public void agregarCliente(int cedula, string nombre, string apellido_1, string apellido_2, string usuario, string password, string provincia, string canton, string distrito, string telefono, string ingreso_mensual, string tipo)
         {
             Cliente cliente = new Cliente();
 
@@ -55,7 +56,7 @@ namespace TecBank_API.DBMS.File_manager
             this.ListaDeClientes.Add(cliente);
             guardarCliente();
         }
-        public void eliminarCliente(string cedula)
+        public void eliminarCliente(int cedula)
         {
             int index = 0;
             for (int i = 0; i < this.ListaDeClientes.Count; i++)
@@ -70,20 +71,48 @@ namespace TecBank_API.DBMS.File_manager
             guardarCliente();
         }
 
-        public Cliente consultarCliente(string cedula)
+        public Cliente consultarCliente(int cedula)
         {
-            Cliente cliente = new Cliente();
+            Cliente cli = new Cliente();
+            int index = 0;
             for (int i = 0; i < this.ListaDeClientes.Count; i++)
             {
                 if (this.ListaDeClientes[i].cedula == cedula)
                 {
-                    cliente = this.ListaDeClientes[i];
+                    index = i;
+                    break;
+                }
+            }
+            cli = this.ListaDeClientes[index];
+            return cli;
+
+
+            /*
+            
+            for (int i = 0; i < this.ListaDeClientes.Count; i++)
+            {
+                if (this.ListaDeClientes[i].cedula == cedula)
+                {
+                    this.cliente.cedula = this.ListaDeClientes[i].cedula;
+                    this.cliente.nombre = this.ListaDeClientes[i].nombre;
+                    this.cliente.apellido_1 = this.ListaDeClientes[i].apellido_1;
+                    this.cliente.apellido_2 = this.ListaDeClientes[i].apellido_2;
+                    this.cliente.usuario = this.ListaDeClientes[i].usuario;
+                    this.cliente.password = this.ListaDeClientes[i].password;
+                    this.cliente.provincia = this.ListaDeClientes[i].provincia;
+                    this.cliente.canton = this.ListaDeClientes[i].canton;
+                    this.cliente.distrito = this.ListaDeClientes[i].distrito;
+                    this.cliente.telefono = this.ListaDeClientes[i].telefono;
+                    this.cliente.ingreso_mensual = this.ListaDeClientes[i].ingreso_mensual;
+                    this.cliente.tipo = this.ListaDeClientes[i].tipo;
                 }      
             }
             return cliente;
+
+            */
         }
 
-        public void actualizarCliente(string llave, string atributoAcambiar, string ValorParaCambiar)
+        public void actualizarCliente(int llave, string atributoAcambiar, string ValorParaCambiar)
         {
             int index = 0;
             for (int i = 0; i < this.ListaDeClientes.Count; i++)
@@ -136,39 +165,6 @@ namespace TecBank_API.DBMS.File_manager
             }
             guardarCliente();
         }
-
-
-        /*
-        private string clientesPath = "C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/clientes.json";
-        
-        private List<Cliente> clienteList = new List<Cliente>();
-
-        private Cliente[] clienteArray = new Cliente[10];
-
-        public void addUser(Cliente cliente)
-        {
-            string newUserJson = JsonSerializer.Serialize(cliente);
-            File.WriteAllText(clientesPath, newUserJson);
-        }
-
-        public List<Cliente> readclientes()
-        {
-            string clientesJson = File.ReadAllText(clientesPath);
-            clienteList = JsonSerializer.Deserialize<Cliente>(clientesJson);
-
-            for (int i = 0; i < clientesJson.Length; i++)
-            {
-                if (clientesJson[i] == '[')
-                {
-
-                }
-            }
-
-            Cliente cliente = JsonSerializer.Deserialize<Cliente>(clientesJson);
-
-            return clienteList;
-        }
-        */
 
     }   
 
