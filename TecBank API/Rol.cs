@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using TecBank_API.Models;
+using Newtonsoft.Json;
 
 namespace TecBank_API
 {
@@ -125,9 +125,6 @@ namespace TecBank_API
 
         }
 
-
-
-
-
+        //fin de la clase
     }
 }

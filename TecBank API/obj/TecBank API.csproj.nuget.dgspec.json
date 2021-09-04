@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gacov\\Music\\bases\\TecBank API\\TecBank API.csproj": {}
+    "C:\\Users\\gacov\\Music\\bases\\TecBank-API\\TecBank API\\TecBank API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gacov\\Music\\bases\\TecBank API\\TecBank API.csproj": {
+    "C:\\Users\\gacov\\Music\\bases\\TecBank-API\\TecBank API\\TecBank API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gacov\\Music\\bases\\TecBank API\\TecBank API.csproj",
+        "projectUniqueName": "C:\\Users\\gacov\\Music\\bases\\TecBank-API\\TecBank API\\TecBank API.csproj",
         "projectName": "TecBank API",
-        "projectPath": "C:\\Users\\gacov\\Music\\bases\\TecBank API\\TecBank API.csproj",
+        "projectPath": "C:\\Users\\gacov\\Music\\bases\\TecBank-API\\TecBank API\\TecBank API.csproj",
         "packagesPath": "C:\\Users\\gacov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gacov\\Music\\bases\\TecBank API\\obj\\",
+        "outputPath": "C:\\Users\\gacov\\Music\\bases\\TecBank-API\\TecBank API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gacov\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.ApplicationInsights.AspNetCore": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[2.15.0, )"
+              "version": "[5.0.9, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
