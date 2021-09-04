@@ -108,5 +108,26 @@ namespace TecBank_API
             }
             guardarRol();
         }
+        public ModeloRol ObtenerRol(string llave)
+        {
+            ModeloRol r1 = new ModeloRol();
+            int index = 0;
+            for (int i = 0; i < this.ListaDeRoles.Count; i++)
+            {
+                if (this.ListaDeRoles[i].Nombre == llave)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            r1 = this.ListaDeRoles[index];
+            return r1;
+
+        }
+
+
+
+
+
     }
 }
