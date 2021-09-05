@@ -18,7 +18,7 @@ namespace TecBank_API.DBMS.File_manager
         }
         public List<Pago> listarPago()
         {
-            using (StreamReader file = File.OpenText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/empleados.json"))
+            using (StreamReader file = File.OpenText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/Pagos.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 this.ListaDePago = (List<Pago>)serializer.Deserialize(file, typeof(List<Pago>));

@@ -1,0 +1,16 @@
+[
+    {
+        "idPago":"",
+        "monto":"",
+        "fechaPago":"",
+        "numeroCuentaDestino":"",
+        "numeroDeCuenta":""
+    },
+    {
+        "idPago":"",
+        "monto":"",
+        "fechaPago":"",
+        "numeroCuentaDestino":"",
+        "numeroDeCuenta":""
+    }
+]
