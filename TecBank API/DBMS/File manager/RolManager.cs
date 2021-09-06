@@ -8,11 +8,11 @@ using Newtonsoft.Json;
 
 namespace TecBank_API
 {
-    public class Rol
+    public class RolManager
     {
-        public List<ModeloRol> ListaDeRoles = new List<ModeloRol>();
-
-        public Rol()
+        public List<Rol> ListaDeRoles = new List<Rol>();
+        private string path = "C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/roles.json";
+        public RolManager()
         {
             listarRoles();
         }
@@ -20,47 +20,44 @@ namespace TecBank_API
          * A partir de un archivo json se obtiene la coleccion de items (rol) y los serilaiza en una lista
          * 
          * **/
-        private void listarRoles()
+        public List<Rol> listarRoles()
         {
-            using (StreamReader file = File.OpenText(@"..\..\..\roles.json"))//se puede usar la direccion exacta hay que ver donde poner el archivo
+            using (StreamReader file = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                this.ListaDeRoles = (List<ModeloRol>)serializer.Deserialize(file, typeof(List<ModeloRol>));
+                this.ListaDeRoles = (List<Rol>)serializer.Deserialize(file, typeof(List<Rol>));
             }
-
+            return this.ListaDeRoles; 
         }
 
-
-
-        /**
-         * muestra la lista en consola
-         * 
-         * **/
-        public void mostrarlista()
+        private void guardarRol()
         {
-            foreach (ModeloRol r in this.ListaDeRoles)
+            using (StreamWriter file = File.CreateText(path))
             {
-                Console.WriteLine(r.ToString());
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, this.ListaDeRoles);
             }
         }
+
+
         /**
          * Agrega un item (rol) en la lista de colecciones y lo guarda en el archivo json
          * 
          * **/
         public void agregarRol(string nombre, string descripcion)
         {
-            ModeloRol rol = new ModeloRol();
+            Rol rol = new Rol();
             rol.Nombre = nombre;
             rol.Descripcion = descripcion;
             this.ListaDeRoles.Add(rol);
             guardarRol();
         }
-        public void eliminarRol(string nombre)
+        public void eliminarRol(int IdRol)
         {
             int index = 0;
             for (int i = 0; i < this.ListaDeRoles.Count; i++)
             {
-                if (this.ListaDeRoles[i].Nombre == nombre)
+                if (this.ListaDeRoles[i].IdRol == IdRol)
                 {
                     this.ListaDeRoles.RemoveAt(index);
                     index = i;
@@ -74,27 +71,35 @@ namespace TecBank_API
          * guarda la lista en archivo json comoc una coleccion
          * 
          * **/
-        private void guardarRol()
+        
+        public Rol consultarRol(int IdRol)
         {
-            using (StreamWriter file = File.CreateText(@"..\..\..\roles.json"))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, this.ListaDeRoles);
-            }
-        }
-
-        public void actualizarRol(string llave, string atributoAcambiar, string ValorParaCambiar)
-        {
+           Rol rol = new Rol();
             int index = 0;
             for (int i = 0; i < this.ListaDeRoles.Count; i++)
             {
-                if (this.ListaDeRoles[i].Nombre == llave)
+                if (this.ListaDeRoles[i].IdRol == IdRol)
                 {
                     index = i;
                     break;
                 }
             }
-            ModeloRol r1 = this.ListaDeRoles[index];
+            rol = this.ListaDeRoles[index];
+            return rol;
+        }
+
+        public void actualizarRol(int llave, string atributoAcambiar, string ValorParaCambiar)
+        {
+            int index = 0;
+            for (int i = 0; i < this.ListaDeRoles.Count; i++)
+            {
+                if (this.ListaDeRoles[i].IdRol == llave)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            Rol r1 = this.ListaDeRoles[index];
             switch (atributoAcambiar)
             {
                 case "Nombre":
@@ -108,9 +113,10 @@ namespace TecBank_API
             }
             guardarRol();
         }
-        public ModeloRol ObtenerRol(string llave)
+
+        public Rol consultarRol(string llave)
         {
-            ModeloRol r1 = new ModeloRol();
+            Rol r1 = new Rol();
             int index = 0;
             for (int i = 0; i < this.ListaDeRoles.Count; i++)
             {
@@ -125,6 +131,5 @@ namespace TecBank_API
 
         }
 
-        //fin de la clase
     }
 }
