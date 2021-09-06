@@ -108,5 +108,24 @@ namespace TecBank_API
             }
             guardarRol();
         }
+
+        public Rol consultarRol(string llave)
+        {
+            Rol r1 = new Rol();
+            int index = 0;
+            for (int i = 0; i < this.ListaDeRoles.Count; i++)
+            {
+                if (this.ListaDeRoles[i].Nombre == llave)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            r1 = this.ListaDeRoles[index];
+            return r1;
+
+        }
+
+
     }
 }
