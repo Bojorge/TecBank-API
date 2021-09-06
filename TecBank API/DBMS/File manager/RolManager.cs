@@ -30,6 +30,14 @@ namespace TecBank_API
             return this.ListaDeRoles; 
         }
 
+        private void guardarRol()
+        {
+            using (StreamWriter file = File.CreateText(path))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, this.ListaDeRoles);
+            }
+        }
 
 
         /**
@@ -63,15 +71,7 @@ namespace TecBank_API
          * guarda la lista en archivo json comoc una coleccion
          * 
          * **/
-        private void guardarRol()
-        {
-            using (StreamWriter file = File.CreateText(path))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, this.ListaDeRoles);
-            }
-        }
-
+        
         public Rol consultarRol(int IdRol)
         {
            Rol rol = new Rol();
