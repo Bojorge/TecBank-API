@@ -11,14 +11,14 @@ namespace TecBank_API.DBMS.File_manager
     public class CuentaManager
     {
         public List<Cuenta> ListaDeCuenta= new List<Cuenta>();
-        private Cuenta item;
+        private string path = "C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/Cuentas.json";
         public CuentaManager()
         {
             listarCuenta();
         }
         public List<Cuenta> listarCuenta()
         {
-            using (StreamReader file = File.OpenText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/Cuentas.json"))
+            using (StreamReader file = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 this.ListaDeCuenta = (List<Cuenta>)serializer.Deserialize(file, typeof(List<Cuenta>));
@@ -27,7 +27,7 @@ namespace TecBank_API.DBMS.File_manager
         }
         private void guardarCuenta()
         {
-            using (StreamWriter file = File.CreateText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/Cuentas.json"))
+            using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, this.ListaDeCuenta);

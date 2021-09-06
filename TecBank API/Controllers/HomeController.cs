@@ -13,21 +13,13 @@ namespace TecBank_API.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        /*
+        
         [HttpGet]
         public String Get()
         {
             return "< API RUNNING >";
         }
-        */
-
-        [HttpGet]
-        public List<Cliente> Get()
-        {
-            ClienteManager cm = new ClienteManager();
-
-            return cm.listarClientes();
-        }
+        
 
     }
 }

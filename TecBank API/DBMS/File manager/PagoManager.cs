@@ -11,14 +11,14 @@ namespace TecBank_API.DBMS.File_manager
     public class PagoManager
     {
         public List<Pago> ListaDePago= new List<Pago>();
-        private Pago item;
+        private string path = "C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/Pagos.json";
         public PagoManager()
         {
-            listarPago();
+            listarPagos();
         }
-        public List<Pago> listarPago()
+        public List<Pago> listarPagos()
         {
-            using (StreamReader file = File.OpenText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/Pagos.json"))
+            using (StreamReader file = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 this.ListaDePago = (List<Pago>)serializer.Deserialize(file, typeof(List<Pago>));
@@ -27,7 +27,7 @@ namespace TecBank_API.DBMS.File_manager
         }
         private void guardarPago()
         {
-            using (StreamWriter file = File.CreateText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/Pagos.json"))
+            using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, this.ListaDePago);

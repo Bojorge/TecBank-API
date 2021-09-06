@@ -54,3 +54,7 @@ C:\Users\Bojorge\Documents\BasesDeDatos\Tareas\TecBank API\TecBank-API\TecBank A
 C:\Users\Bojorge\Documents\BasesDeDatos\Tareas\TecBank API\TecBank-API\TecBank API\obj\Debug\net5.0\TecBank API.RazorTargetAssemblyInfo.cache
 C:\Users\Bojorge\Documents\BasesDeDatos\Tareas\TecBank API\TecBank-API\TecBank API\obj\Debug\net5.0\TecBank API.csproj.CopyComplete
 C:\Users\Bojorge\Documents\BasesDeDatos\Tareas\TecBank API\TecBank-API\TecBank API\obj\Debug\net5.0\TecBank API.genruntimeconfig.cache
+C:\Users\Bojorge\Documents\BasesDeDatos\Tareas\TecBank API\TecBank-API\TecBank API\bin\Debug\net5.0\DBMS\Data\cuentas.json
+C:\Users\Bojorge\Documents\BasesDeDatos\Tareas\TecBank API\TecBank-API\TecBank API\bin\Debug\net5.0\DBMS\Data\empleados.json
+C:\Users\Bojorge\Documents\BasesDeDatos\Tareas\TecBank API\TecBank-API\TecBank API\bin\Debug\net5.0\DBMS\Data\pagos.json
+C:\Users\Bojorge\Documents\BasesDeDatos\Tareas\TecBank API\TecBank-API\TecBank API\bin\Debug\net5.0\DBMS\Data\tarjetas.json

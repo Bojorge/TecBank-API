@@ -12,14 +12,14 @@ namespace TecBank_API.DBMS.File_manager
     public class TarjetaManager
     {
         public List<Tarjeta> ListaDeTarjeta= new List<Tarjeta>();
-        private Tarjeta item;
+        private string path = "C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/Tarjetas.json";
         public TarjetaManager()
         {
-            listarTarjeta();
+            listarTarjetas();
         }
-        public List<Tarjeta> listarTarjeta()
+        public List<Tarjeta> listarTarjetas()
         {
-            using (StreamReader file = File.OpenText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/Tarjetas.json"))
+            using (StreamReader file = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 this.ListaDeTarjeta = (List<Tarjeta>)serializer.Deserialize(file, typeof(List<Tarjeta>));
@@ -28,7 +28,7 @@ namespace TecBank_API.DBMS.File_manager
         }
         private void guardarTarjeta()
         {
-            using (StreamWriter file = File.CreateText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/Tarjetas.json"))
+            using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, this.ListaDeTarjeta);

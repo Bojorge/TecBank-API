@@ -9,11 +9,8 @@ namespace TecBank_API.Models
     {
         public Rol(){}
 
+        public int IdRol { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public override string ToString()
-        {
-            return "||" + this.Nombre + "   || " + this.Descripcion;
-        }
     }
 }

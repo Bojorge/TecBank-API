@@ -1,30 +1,30 @@
 [
   {
     "cedula": "123456789",
-    "nombre": "nombre",
-    "apellido_1": "apellido_1",
-    "apellido_2": "apellido_2",
-    "usuario": "usuario",
-    "password": "password",
-    "provincia": "provincia",
-    "canton": "canton",
-    "distrito": "distrito",
-    "telefono": "telefono",
-    "ingreso_mensual": "ingreso_mensual",
-    "tipo": "tipo"
+    "nombre": "Markku",
+    "apellido_1": "Aleksi",
+    "apellido_2": "Laiho",
+    "usuario": "cob@guitar.com",
+    "password": "childrenofbodom",
+    "provincia": "Heredia",
+    "canton": "Barva",
+    "distrito": "San Pablo",
+    "telefono": "33333333",
+    "ingreso_mensual": "1000000",
+    "tipo": "fisico"
   },
   {
-    "cedula": "906030813",
-    "nombre": "nom",
-    "apellido_1": "ap1",
-    "apellido_2": "ap2",
-    "usuario": "user",
-    "password": "pass",
-    "provincia": "prov",
-    "canton": "can",
-    "distrito": "dist",
-    "telefono": "tel",
-    "ingreso_mensual": "ingmes",
-    "tipo": "tp"
+    "cedula": "987654321",
+    "nombre": "Alissa",
+    "apellido_1": "White",
+    "apellido_2": "Gluz",
+    "usuario": "ae@voice.com",
+    "password": "archenemy",
+    "provincia": "Cartago",
+    "canton": "El Guarco",
+    "distrito": "Tejar",
+    "telefono": "99999999",
+    "ingreso_mensual": "2000000",
+    "tipo": "juridico"
   }
 ]

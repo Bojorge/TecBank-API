@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-//using System.Text.Json;
 using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json.Linq;
@@ -15,7 +14,7 @@ namespace TecBank_API.DBMS.File_manager
     {
 
         public List<Cliente> ListaDeClientes = new List<Cliente>();
-        private Cliente cliente;
+        private string path = "C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/clientes.json";
 
         public ClienteManager()
         {
@@ -24,7 +23,7 @@ namespace TecBank_API.DBMS.File_manager
 
         private void guardarCliente()
         {
-            using (StreamWriter file = File.CreateText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/clientes.json"))
+            using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, this.ListaDeClientes);
@@ -33,7 +32,7 @@ namespace TecBank_API.DBMS.File_manager
 
         public List<Cliente> listarClientes()
         {
-            using (StreamReader file = File.OpenText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/clientes.json"))
+            using (StreamReader file = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 this.ListaDeClientes = (List<Cliente>)serializer.Deserialize(file, typeof(List<Cliente>));
@@ -90,31 +89,6 @@ namespace TecBank_API.DBMS.File_manager
             }
             cli = this.ListaDeClientes[index];
             return cli;
-
-
-            /*
-            
-            for (int i = 0; i < this.ListaDeClientes.Count; i++)
-            {
-                if (this.ListaDeClientes[i].cedula == cedula)
-                {
-                    this.cliente.cedula = this.ListaDeClientes[i].cedula;
-                    this.cliente.nombre = this.ListaDeClientes[i].nombre;
-                    this.cliente.apellido_1 = this.ListaDeClientes[i].apellido_1;
-                    this.cliente.apellido_2 = this.ListaDeClientes[i].apellido_2;
-                    this.cliente.usuario = this.ListaDeClientes[i].usuario;
-                    this.cliente.password = this.ListaDeClientes[i].password;
-                    this.cliente.provincia = this.ListaDeClientes[i].provincia;
-                    this.cliente.canton = this.ListaDeClientes[i].canton;
-                    this.cliente.distrito = this.ListaDeClientes[i].distrito;
-                    this.cliente.telefono = this.ListaDeClientes[i].telefono;
-                    this.cliente.ingreso_mensual = this.ListaDeClientes[i].ingreso_mensual;
-                    this.cliente.tipo = this.ListaDeClientes[i].tipo;
-                }      
-            }
-            return cliente;
-
-            */
         }
 
         public void actualizarCliente(int llave, string atributoAcambiar, string ValorParaCambiar)

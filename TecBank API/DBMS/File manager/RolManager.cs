@@ -11,7 +11,7 @@ namespace TecBank_API
     public class RolManager
     {
         public List<Rol> ListaDeRoles = new List<Rol>();
-
+        private string path = "C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/roles.json";
         public RolManager()
         {
             listarRoles();
@@ -20,29 +20,18 @@ namespace TecBank_API
          * A partir de un archivo json se obtiene la coleccion de items (rol) y los serilaiza en una lista
          * 
          * **/
-        private void listarRoles()
+        public List<Rol> listarRoles()
         {
-            using (StreamReader file = File.OpenText(@"..\..\..\roles.json"))//se puede usar la direccion exacta hay que ver donde poner el archivo
+            using (StreamReader file = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 this.ListaDeRoles = (List<Rol>)serializer.Deserialize(file, typeof(List<Rol>));
             }
-
+            return this.ListaDeRoles; 
         }
 
 
 
-        /**
-         * muestra la lista en consola
-         * 
-         * **/
-        public void mostrarlista()
-        {
-            foreach (Rol r in this.ListaDeRoles)
-            {
-                Console.WriteLine(r.ToString());
-            }
-        }
         /**
          * Agrega un item (rol) en la lista de colecciones y lo guarda en el archivo json
          * 
@@ -55,12 +44,12 @@ namespace TecBank_API
             this.ListaDeRoles.Add(rol);
             guardarRol();
         }
-        public void eliminarRol(string nombre)
+        public void eliminarRol(int IdRol)
         {
             int index = 0;
             for (int i = 0; i < this.ListaDeRoles.Count; i++)
             {
-                if (this.ListaDeRoles[i].Nombre == nombre)
+                if (this.ListaDeRoles[i].IdRol == IdRol)
                 {
                     this.ListaDeRoles.RemoveAt(index);
                     index = i;
@@ -76,19 +65,35 @@ namespace TecBank_API
          * **/
         private void guardarRol()
         {
-            using (StreamWriter file = File.CreateText(@"..\..\..\roles.json"))
+            using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, this.ListaDeRoles);
             }
         }
 
-        public void actualizarRol(string llave, string atributoAcambiar, string ValorParaCambiar)
+        public Rol consultarRol(int IdRol)
+        {
+           Rol rol = new Rol();
+            int index = 0;
+            for (int i = 0; i < this.ListaDeRoles.Count; i++)
+            {
+                if (this.ListaDeRoles[i].IdRol == IdRol)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            rol = this.ListaDeRoles[index];
+            return rol;
+        }
+
+        public void actualizarRol(int llave, string atributoAcambiar, string ValorParaCambiar)
         {
             int index = 0;
             for (int i = 0; i < this.ListaDeRoles.Count; i++)
             {
-                if (this.ListaDeRoles[i].Nombre == llave)
+                if (this.ListaDeRoles[i].IdRol == llave)
                 {
                     index = i;
                     break;

@@ -11,14 +11,14 @@ namespace TecBank_API.DBMS.File_manager
     public class EmpleadoManager
     {
         public List<Empleado> ListaDeEmpleado = new List<Empleado>();
-        private Empleado item;
+        private string path = "C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/empleados.json";
         public EmpleadoManager()
         {
-            listarEmpleado();
+            listarEmpleados();
         }
-        public List<Empleado> listarEmpleado()
+        public List<Empleado> listarEmpleados()
         {
-            using (StreamReader file = File.OpenText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/empleados.json"))
+            using (StreamReader file = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 this.ListaDeEmpleado = (List<Empleado>)serializer.Deserialize(file, typeof(List<Empleado>));
@@ -27,7 +27,7 @@ namespace TecBank_API.DBMS.File_manager
         }
         private void guardarEmpleado()
         {
-            using (StreamWriter file = File.CreateText("C:/Users/Bojorge/Documents/BasesDeDatos/Tareas/TecBank API/TecBank-API/TecBank API/DBMS/Data/empleados.json"))
+            using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, this.ListaDeEmpleado);
