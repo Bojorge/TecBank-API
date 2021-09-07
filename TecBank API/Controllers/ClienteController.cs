@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,14 +34,20 @@ namespace TecBank_API.Controllers
         public void Post([FromBody] string value)
         {
         }
-
+        /*
         // PUT api/<ClienteController>/5
         [HttpPut("{id}")]
         public void Put(int id, string atributoAcambiar, string ValorParaCambiar)
         {
             cm.actualizarCliente(id, atributoAcambiar, ValorParaCambiar);
         }
-
+        */
+        [HttpPut("{id}")]
+        public void Put( string ClienteParaCambiar)
+        {
+            Cliente cl = JsonConvert.DeserializeObject<Cliente>(ClienteParaCambiar);
+            cm.actualizarCliente(cl);
+        }
         // DELETE api/<ClienteController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)

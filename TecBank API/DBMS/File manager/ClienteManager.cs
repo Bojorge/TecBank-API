@@ -145,7 +145,26 @@ namespace TecBank_API.DBMS.File_manager
             guardarCliente();
         }
 
-    }   
+        public void actualizarCliente(Cliente cl)
+        {
+            int index = 0;
+            for (int i = 0; i < this.ListaDeClientes.Count; i++)
+            {
+                if (this.ListaDeClientes[i].cedula == cl.cedula)
+                {
+                    index = i;
+                    break;
+                }
+            }
+           this.ListaDeClientes[index]=cl;
 
+            guardarCliente();
+        }
+
+
+    
+    
+
+}
 
 }

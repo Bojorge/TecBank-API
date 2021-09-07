@@ -53,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank-API\\TecBank API\\TecBank API.csproj",
+      "projectUniqueName": "C:\\Users\\gacov\\Music\\bases\\TecBank-API\\TecBank API\\TecBank API.csproj",
       "projectName": "TecBank API",
-      "projectPath": "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank-API\\TecBank API\\TecBank API.csproj",
-      "packagesPath": "C:\\Users\\Bojorge\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bojorge\\Documents\\BasesDeDatos\\Tareas\\TecBank API\\TecBank-API\\TecBank API\\obj\\",
+      "projectPath": "C:\\Users\\gacov\\Music\\bases\\TecBank-API\\TecBank API\\TecBank API.csproj",
+      "packagesPath": "C:\\Users\\gacov\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gacov\\Music\\bases\\TecBank-API\\TecBank API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gacov\\AppData\\Roaming\\NuGet\\NuGet.Config",
