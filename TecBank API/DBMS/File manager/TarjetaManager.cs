@@ -58,8 +58,8 @@ namespace TecBank_API.DBMS.File_manager
             {
                 if (this.ListaDeTarjeta[i].NumeroTarjeta == NumeroTarjeta)
                 {
-                    this.ListaDeTarjeta.RemoveAt(index);
                     index = i;
+                    this.ListaDeTarjeta.RemoveAt(index);
                     break;
                 }
             }

@@ -56,8 +56,8 @@ namespace TecBank_API.DBMS.File_manager
             {
                 if (this.ListaDeCuenta[i].NumeroCuenta == NumeroCuenta)
                 {
-                    this.ListaDeCuenta.RemoveAt(index);
                     index = i;
+                    this.ListaDeCuenta.RemoveAt(index);
                     break;
                 }
             }

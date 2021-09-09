@@ -55,8 +55,8 @@ namespace TecBank_API.DBMS.File_manager
             {
                 if (this.ListaDeEmpleado[i].IdEmpleado == IdEmpleado)
                 {
-                    this.ListaDeEmpleado.RemoveAt(index);
                     index = i;
+                    this.ListaDeEmpleado.RemoveAt(index);
                     break;
                 }
             }

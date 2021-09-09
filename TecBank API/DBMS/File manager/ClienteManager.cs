@@ -67,8 +67,8 @@ namespace TecBank_API.DBMS.File_manager
             {
                 if (this.ListaDeClientes[i].cedula == cedula)
                 {
-                    this.ListaDeClientes.RemoveAt(index);
                     index = i;
+                    this.ListaDeClientes.RemoveAt(index);
                     break;
                 }
             }

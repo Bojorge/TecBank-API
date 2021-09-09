@@ -53,8 +53,8 @@ namespace TecBank_API.DBMS.File_manager
             {
                 if (this.ListaDePago[i].IdPago == IdPago)
                 {
-                    this.ListaDePago.RemoveAt(index);
                     index = i;
+                    this.ListaDePago.RemoveAt(index);
                     break;
                 }
             }

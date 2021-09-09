@@ -59,8 +59,8 @@ namespace TecBank_API
             {
                 if (this.ListaDeRoles[i].IdRol == IdRol)
                 {
-                    this.ListaDeRoles.RemoveAt(index);
                     index = i;
+                    this.ListaDeRoles.RemoveAt(index);
                     break;
                 }
             }
