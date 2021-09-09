@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TecBank_API.DBMS.File_manager;
 using TecBank_API.Models;
+using Newtonsoft.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -38,10 +39,10 @@ namespace TecBank_API.Controllers
 
         // PUT api/<TarjetaController>/5
         [HttpPut("{id}")]
-        [HttpPut("{id}")]
-        public void Put(int id, string atributoAcambiar, string ValorParaCambiar)
+        public void Put(string TarjetaParaCambiar)
         {
-            tm.actualizarTarjeta(id, atributoAcambiar, ValorParaCambiar);
+            Tarjeta tj = JsonConvert.DeserializeObject<Tarjeta>(TarjetaParaCambiar);
+            tm.actualizarTarjeta(tj);
         }
 
         // DELETE api/<TarjetaController>/5

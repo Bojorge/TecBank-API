@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TecBank_API.DBMS.File_manager;
 using TecBank_API.Models;
+using Newtonsoft.Json;
 
 namespace TecBank_API.Controllers
 {
@@ -36,9 +37,10 @@ namespace TecBank_API.Controllers
 
         // PUT api/<PagoController>/5
         [HttpPut("{id}")]
-        public void Put(int id, string atributoAcambiar, string ValorParaCambiar)
+        public void Put(string PagoParaCambiar)
         {
-            pm.actualizarPago(id, atributoAcambiar, ValorParaCambiar);
+            Pago pago = JsonConvert.DeserializeObject<Pago>(PagoParaCambiar);
+            pm.actualizarPago(pago);
         }
 
         // DELETE api/<PagoController>/5

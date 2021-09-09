@@ -93,8 +93,7 @@ namespace TecBank_API.DBMS.File_manager
                     break;
                 }
             }
-            Cuenta
-            item = this.ListaDeCuenta[index];
+            Cuenta item = this.ListaDeCuenta[index];
             switch (atributoAcambiar)
             {
                 case "Tipo":
@@ -115,35 +114,21 @@ namespace TecBank_API.DBMS.File_manager
             }
             guardarCuenta();//guarde el item
         }
-        public void actualizarCuenta(int llave, string atributoAcambiar, int ValorParaCambiar)
+
+        public void actualizarCuenta(Cuenta cuenta)
         {
             int index = 0;
             for (int i = 0; i < this.ListaDeCuenta.Count; i++)
             {
-                if (this.ListaDeCuenta[i].NumeroCuenta == llave)//llave== llave
+                if (this.ListaDeCuenta[i].NumeroCuenta == cuenta.NumeroCuenta)
                 {
                     index = i;
                     break;
                 }
             }
-            Cuenta
-            item = this.ListaDeCuenta[index];
-            switch (atributoAcambiar)
-            {
-                case "Saldo":
-                    item.Saldo = ValorParaCambiar;
-                    break;
-                case "Numero":
-                    item.Numero = ValorParaCambiar;
-                    break;
-                case "CedulaCliente":
-                    item.CedulaCliente = ValorParaCambiar;
-                    break;
-                default:
-                    break;
+            this.ListaDeCuenta[index] = cuenta;
 
-            }
-            guardarCuenta();//guarde el item
+            guardarCuenta();
         }
 
 

@@ -117,32 +117,21 @@ namespace TecBank_API.DBMS.File_manager
             }
             guardarTarjeta();//guarde el item
         }
-        public void actualizarTarjeta(int llave, string atributoAcambiar, string ValorParaCambiar)
+
+        public void actualizarTarjeta(Tarjeta tj)
         {
             int index = 0;
             for (int i = 0; i < this.ListaDeTarjeta.Count; i++)
             {
-                if (this.ListaDeTarjeta[i].NumeroTarjeta == llave)//llave== llave
+                if (this.ListaDeTarjeta[i].NumeroTarjeta == tj.NumeroTarjeta)
                 {
                     index = i;
                     break;
                 }
             }
-            Tarjeta
-            item = this.ListaDeTarjeta[index];
-            switch (atributoAcambiar)
-            {
-                case "FechaDeExpiracion":
-                    item.FechaDeExpiracion = ValorParaCambiar;
-                    break;
-                case "Tipo":
-                    item.Tipo = ValorParaCambiar;
-                    break;
-                default:
-                    break;
+            this.ListaDeTarjeta[index] = tj;
 
-            }
-            guardarTarjeta();//guarde el item
+            guardarTarjeta();
         }
     }//fin de clase
 }

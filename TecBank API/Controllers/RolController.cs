@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +36,10 @@ namespace TecBank_API.Controllers
 
         // PUT api/<RolController>/5
         [HttpPut("{id}")]
-        public void Put(int id, string atributoAcambiar, string ValorParaCambiar)
+        public void Put(string RolParaCambiar)
         {
-            rm.actualizarRol(id, atributoAcambiar, ValorParaCambiar);
+            Rol rol = JsonConvert.DeserializeObject<Rol>(RolParaCambiar);
+            rm.actualizarRol(rol);
         }
 
         // DELETE api/<RolController>/5
